@@ -1,35 +1,22 @@
 <template>
   <div id="app">
-
-    <p>{{count}}</p>
-    <button @click="add">点我+</button>
-    <button @click="sub">点我-</button>
-    <aaa></aaa>
+      请输入个数：<input type="number" v-model.number="count" />
+    <counterGroup :counters="count"/>
   </div>
 </template>
-
 <script>
-
-import aaa from './components/MutiCount'
+import counterGroup from "./components/counterGroup.vue"
 export default {
   name: 'app',
-  data:function(){
-     return{
-       count:0
-     }
+  components: {
+    counterGroup
   },
-  methods:{
-    add:function(){
-    this.count++;
-    },
-    sub:function(){
-    this.count--;
+  data(){
+    return{
+      count:0
     }
-  },
-  components:{
-    aaa
   }
-};
+}
 </script>
 
 <style>
