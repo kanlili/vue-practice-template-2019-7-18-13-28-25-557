@@ -14,14 +14,14 @@ export default {
    count:0,
   }
   },
-  methods: {
-  	add() {
-    this.count++;
-    this.$emit('addSum',1);
-  	},
-    sub() {
-    this.count--;
-    this.$emit('addSum', -1);
+methods: {
+  add() {
+  this.count++;
+  this.$emit('addSum',1);
+  },
+  sub() {
+  this.count--;
+  this.$emit('addSum', -1);
     }
   }
 }
