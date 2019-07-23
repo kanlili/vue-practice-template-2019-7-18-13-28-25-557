@@ -3,11 +3,12 @@
       请输入个数：<input type="number" v-model.number="count" />
     <counterGroup :counters="count"/>
     <!-- <component v-bind:is="component" ></component> -->
-     <router-view/>
+     <!-- <router-view/> -->
   </div>
 </template>
 <script>
 import counterGroup from "./components/counterGroup.vue"
+// import { watch } from 'fs';
 // import HelloWorld from "./components/HelloWorld.vue"
 export default {
   name: 'app',
@@ -19,9 +20,15 @@ export default {
     return{
       count:0,
       //current:fff('/hello')? HelloWorld: counterGroup,
+    };
+  },
+  watch : {
+    count:function(newv){
+      this.$store.commit('initInputNumber',newv);
     }
   }
 }
+
 </script>
 
 <style>

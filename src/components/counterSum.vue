@@ -1,6 +1,6 @@
  <template>
-  <div id="countersum">
-  <p>总和:{{counterSum}}</p>
+  <div id="countersum" >
+ <input v-model="compluted" > <!-- 总和:{{counterSum}} -->
   </div>
 </template>
 
@@ -10,6 +10,11 @@ export default {
   props: {
     counterSum:Number
   },
+  computed:{
+     compluted(){
+       return this.$store.getters.result;
+     }
+  }
 
 }
 </script>

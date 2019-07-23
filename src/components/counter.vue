@@ -17,11 +17,13 @@ export default {
 methods: {
   add() {
   this.count++;
-  this.$emit('addSum',1);
+  this.$store.commit('add');
+  // this.$emit('addSum',1);
   },
   sub() {
   this.count--;
-  this.$emit('addSum', -1);
+  this.$store.commit('sub');
+  // this.$emit('addSum', -1);
     }
   }
 }
